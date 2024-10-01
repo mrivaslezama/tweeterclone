@@ -7,8 +7,12 @@
   <%= form.submit "Buscar" %>
 <% end %>
 
+<br>
+
 <%= link_to "New tweet", new_tweet_path %>
-<%# notas %>
+
+<br>
+<br>
 
 <h1>Tweets</h1>
 
@@ -20,3 +24,6 @@
     </p>
   <% end %>
 </div>
+
+<%# Note the double equals sign "==" which marks the output as trusted and html safe: %>
+    <%== pagy_nav(@pagy) %>
