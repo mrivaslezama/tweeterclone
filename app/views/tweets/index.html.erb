@@ -1,0 +1,22 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Tweets" %>
+
+<%= form_with url: tweets_path, method: :get do |form| %>
+  <%= form.text_field :query_text, placeholder: "Busca acá", value: params[:query_text] %>
+  <%= form.submit "Buscar" %>
+<% end %>
+
+<%= link_to "New tweet", new_tweet_path %>
+<%# notas %>
+
+<h1>Tweets</h1>
+
+<div id="tweets">
+  <% @tweets.each do |tweet| %>
+    <%= render tweet %>
+    <p>
+      <%= link_to "Show this tweet", tweet %>
+    </p>
+  <% end %>
+</div>
